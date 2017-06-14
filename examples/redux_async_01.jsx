@@ -1,31 +1,23 @@
-// Action types
-const amountTypes = {
-  'FETCH_AMOUNT_REQUEST': 'FETCH_AMOUNT_REQUEST',
-  'FETCH_AMOUNT_SUCCESS': 'FETCH_AMOUNT_SUCCESS',
-  'FETCH_AMOUNT_FAILURE': 'FETCH_AMOUNT_FAILURE'
-};
+import fetch from 'isomorphic-fetch';
+import thunk from 'redux-thunk';
 
-// Reducer
-function amountReducer(state, action) {
-  switch (action.type) {
-    case amountTypes.FETCH_AMOUNT_SUCCESS:
-      return {
-        amount: action.amount
-      };
+const RESOURCE_URL = '...';
 
-    // Handle request, failure too
+// Action creator
+function fetchAmount() {
+  return (dispatch, getState) => {
+    dispatch({ type: amountTypes.FETCH_AMOUNT_REQUEST });
 
-    default:
-      return state;
-  }
+    return fetch(RESOURCE_URL).then(res => {
+      if(res.ok) {
+        return res.json();
+      }
+
+      throw(res.statusText);
+    }).then(body => {
+      dispatch({ type: amountTypes.FETCH_AMOUNT_SUCCESS, amount: body });
+    }).catch(error => {
+      dispatch({ type: amountTypes.FETCH_AMOUNT_FAILURE, error });
+    });
+  };
 }
-
-...
-
-import { createStore, applyMiddleware } from 'redux';
-
-// Attach middleware when initializing
-const store = createStore(amountReducer, [], applyMiddleware(thunk));
-
-// Dispatch somewhere
-store.dispatch(fetchAmount()).then(() => console.log('done'));
