@@ -198,7 +198,7 @@ export default class Presentation extends React.Component {
           </Heading>
           <List>
             <Appear><ListItem>0. Replace the custom pair with <Link href="https://www.npmjs.com/package/react-redux">react-redux</Link> based implementation</ListItem></Appear>
-            <Appear><ListItem>1. Push timer logic to a Redux middleware. <Link href="https://www.npmjs.com/package/redux-timer-middleware">Hint</Link></ListItem></Appear>
+            <Appear><ListItem>1. Push timer logic to a Redux middleware. <Link href="https://medium.com/@machadogj/timers-in-react-with-redux-apps-9a5a722162e8">Hint 1</Link>, <Link href="https://www.npmjs.com/package/redux-timer-middleware">hint 2</Link></ListItem></Appear>
             <Appear><ListItem>Solutions: <Link href="https://codesandbox.io/s/VOnYZGxvB">0</Link></ListItem></Appear>
           </List>
         </Slide>
