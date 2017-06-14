@@ -19,7 +19,7 @@ import {
   ListItem,
   //Markdown,
   //Quote,
-  Slide,
+  Slide
   //Table,
   //TableRow,
   //TableHeaderItem,
@@ -40,6 +40,7 @@ require("./custom.css");
 
 const slideTransition = ["slide"];
 const images = mapValues({
+  flux: require("../images/flux.png"),
   survivejs: require("../images/survivejs.png")
 }, (v) => v.replace("/", ""));
 
@@ -63,7 +64,23 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={1}>
+          <Heading size={2}>
+            The Problem of State
+          </Heading>
+          <List>
+            <Appear><ListItem>Application state, UI state</ListItem></Appear>
+            <Appear><ListItem>Where to push it?</ListItem></Appear>
+            <Appear><ListItem>How to manipulate it?</ListItem></Appear>
+            <Appear><ListItem>How to propagate changes to the UI?</ListItem></Appear>
+          </List>
+        </Slide>
+
+        <Slide transition={slideTransition}>
+          <Image src={images.flux} margin="40px auto" height="324px" />
+        </Slide>
+
+        <Slide transition={slideTransition}>
+          <Heading size={2}>
             Redux Philosophy
           </Heading>
           <List>
@@ -79,7 +96,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={1}>
+          <Heading size={2}>
             Redux Continued
           </Heading>
           <List>
@@ -91,7 +108,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={4}>
+          <Heading size={2}>
             Minimal <Link href="http://redux.js.org/">Redux</Link>
           </Heading>
           <CodePane
@@ -102,7 +119,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={4}>
+          <Heading size={2}>
             <Link href="http://redux.js.org/">Redux</Link> with a Store
           </Heading>
           <CodePane
@@ -130,7 +147,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={4}>
+          <Heading size={2}>
             Connecting Using <Link href="https://www.npmjs.com/package/react-redux">react-redux</Link> 1/3
           </Heading>
           <CodePane
@@ -141,7 +158,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={4}>
+          <Heading size={2}>
             Connecting Using <Link href="https://www.npmjs.com/package/react-redux">react-redux</Link> 2/3
           </Heading>
           <CodePane
@@ -152,7 +169,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={4}>
+          <Heading size={2}>
             Connecting Using <Link href="https://www.npmjs.com/package/react-redux">react-redux</Link> 3/3
           </Heading>
           <CodePane
@@ -163,7 +180,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={1}>
+          <Heading size={2}>
             <Link href="https://www.npmjs.com/package/react-redux">react-redux</Link> Recap
           </Heading>
           <List>
@@ -199,7 +216,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={4}>
+          <Heading size={2}>
             Async with <Link href="https://www.npmjs.com/package/redux-thunk">redux-thunk</Link> 1/2
           </Heading>
           <CodePane
@@ -210,7 +227,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={4}>
+          <Heading size={2}>
             Async with <Link href="https://www.npmjs.com/package/redux-thunk">redux-thunk</Link> 2/2
           </Heading>
           <CodePane
@@ -221,7 +238,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={1}>
+          <Heading size={2}>
             <Link href="https://www.npmjs.com/package/redux-thunk">redux-thunk</Link> Recap
           </Heading>
           <List>
@@ -239,7 +256,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={4}>
+          <Heading size={2}>
             <Link href="https://www.npmjs.com/package/redux-saga">redux-saga</Link> 1/2
           </Heading>
           <CodePane
@@ -250,7 +267,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={4}>
+          <Heading size={2}>
             <Link href="https://www.npmjs.com/package/redux-saga">redux-saga</Link> 2/2
           </Heading>
           <CodePane
@@ -261,7 +278,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={1}>
+          <Heading size={2}>
             <Link href="https://www.npmjs.com/package/redux-saga">redux-saga</Link> Recap
           </Heading>
           <List>
@@ -274,13 +291,13 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={1}>
+          <Heading size={2}>
             Exercises
           </Heading>
           <List>
-            <Appear><ListItem>Set Up a Mock Response at <Link href="http://www.mocky.io/">mocky.io</Link>. <b>Important!</b> Set <code>Access-Control-Allow-Origin</code> to <code>https://codesandbox.io/</code>.</ListItem></Appear>
-            <Appear><ListItem>Configure <Link href="https://www.npmjs.com/package/redux-thunk">redux-thunk</Link> and perform a query against the resource</ListItem></Appear>
-            <Appear><ListItem>Implement a <Link href="https://www.npmjs.com/package/redux-saga">redux-saga</Link> variant*</ListItem></Appear>
+            <Appear><ListItem>0. Set Up a Mock Response at <Link href="http://www.mocky.io/">mocky.io</Link>. <b>Important!</b> Set <code>Access-Control-Allow-Origin</code> to <code>{'https://codesandbox.io/'}</code>.</ListItem></Appear>
+            <Appear><ListItem>1. Configure <Link href="https://www.npmjs.com/package/redux-thunk">redux-thunk</Link> and perform a query against the resource</ListItem></Appear>
+            <Appear><ListItem>2. Implement a <Link href="https://www.npmjs.com/package/redux-saga">redux-saga</Link> variant*</ListItem></Appear>
           </List>
         </Slide>
 
