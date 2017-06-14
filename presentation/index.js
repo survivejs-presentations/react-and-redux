@@ -197,9 +197,9 @@ export default class Presentation extends React.Component {
             Exercises
           </Heading>
           <List>
-            <Appear><ListItem>0. Replace custom <code>State</code> with <Link href="https://www.npmjs.com/package/react-redux">react-redux</Link> style <code>Provider</code>/<code>connect</code> pair. Hint: Use <code>context</code>!</ListItem></Appear>
-            <Appear><ListItem>1. Replace the custom pair with <Link href="https://www.npmjs.com/package/react-redux">react-redux</Link> based implementation</ListItem></Appear>
-            <Appear><ListItem>Solutions: <Link href="">0</Link>, <Link href="">1</Link></ListItem></Appear>
+            <Appear><ListItem>0. Replace the custom pair with <Link href="https://www.npmjs.com/package/react-redux">react-redux</Link> based implementation</ListItem></Appear>
+            <Appear><ListItem>1. Push timer logic to a Redux middleware</ListItem></Appear>
+            <Appear><ListItem>Solutions: <Link href="https://codesandbox.io/s/VOnYZGxvB">0</Link>, <Link href="">1</Link></ListItem></Appear>
           </List>
         </Slide>
 
