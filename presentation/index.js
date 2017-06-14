@@ -13,21 +13,19 @@ import {
   //Fill,
   Heading,
   Image,
-  Layout,
+  //Layout,
   Link,
   List,
   ListItem,
   //Markdown,
   //Quote,
   Slide,
-  Table,
-  TableRow,
-  TableHeaderItem,
-  TableItem
+  //Table,
+  //TableRow,
+  //TableHeaderItem,
+  //TableItem
   //Text
 } from "spectacle";
-
-import Counter from './counter_01';
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
