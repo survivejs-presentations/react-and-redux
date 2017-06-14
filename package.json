@@ -2,7 +2,7 @@
   "name": "react-and-redux-presentation",
   "private": true,
   "version": "0.0.0",
-  "description": "Quick introduction using React with Redux",
+  "description": "Quick introduction to using React with Redux",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf dist",

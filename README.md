@@ -1,3 +1,3 @@
 # React and Redux
 
-Quick introduction using React with Redux.
+Quick introduction to using React with Redux.
